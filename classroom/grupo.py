@@ -23,7 +23,7 @@ class Grupo:
          return f"Grupo de estudiantes: {self._grupo}"
 
     @ classmethod
-    def asignarNombre(self):
-        self.grado = "Grado 10"
+    def asignarNombre(cls, nombre="grado 10", n=None):
+        cls.grado = nombre
 
     
