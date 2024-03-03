@@ -1,3 +1,4 @@
+from multimethod import multimethod
 from classroom.asignatura import Asignatura
 
 class Grupo:
@@ -21,6 +22,11 @@ class Grupo:
     def __str__(self):
          return f"Grupo de estudiantes: {self._grupo}"
 
-    @ classmethod
-    def asignarNombre(cls, nombre="Grado 10"):
-        cls.grado = nombre
+    @ multimethod
+    def asignarNombre(self, nombre:str):
+        self.grado = nombre
+
+    @ multimethod
+    def asignarNombre(self):
+        self.grado = "Grado 10"
+    
